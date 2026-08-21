@@ -3,78 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="Time Tracking Dashboard">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
+  <script defer src="./scripts/script.js"></script>
   
   <title>Frontend Mentor | Time tracking dashboard</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Report for
-  Jeremy Robson
+  <main>
+    <article class="dashboard">
+      <header>
+        <img src="./images/image-jeremy.png" alt="">
+        <h1>
+          <span class="small">Report for</span>
+          Jeremy Robson
+        </h1>
 
-  Daily
-  Weekly
-  Monthly
+        <nav>
+          <ul>
+            <li>
+              <button type="button">Daily</button>
+            </li>
+            <li>
+              <button type="button">Weekly</button>
+            </li>
+            <li>
+              <button type="button">Monthly</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
-
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
-
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
-
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
-
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
-
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
-
+      <section class="work" timeframe="daily">
+        <div class="content">
+          <button type="button" class="ellipsis">
+            <img src="./images/icon-ellipsis.svg" alt="More">
+          </button>
+          <h2>
+            Work
+          </h2>
+          <div class="data daily">
+            <p class="current">
+              <span class="current-time">5hrs</span>
+            </p>
+            <p class="previous">
+              Yesterday - <span class="previous-time">7hrs</span>
+            </p>
+          </div>
+          <div class="data weekly">
+            <p class="current">
+              <span class="current-time">32hrs</span>
+            </p>
+            <p class="previous">
+              Last Week - <span class="previous-time">36hrs</span>
+            </p>
+          </div>
+          <div class="data monthly">
+            <p class="current">
+              <span class="current-time">103hrs</span>
+            </p>
+            <p class="previous">
+              Last Month - <span class="previous-time">128hrs</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="play" timeframe="daily">
+        <div class="content">
+          <button type="button" class="ellipsis">
+            <img src="./images/icon-ellipsis.svg" alt="More">
+          </button>
+          <h2>
+            Play
+          </h2>
+          <div class="data daily">
+            <p class="current">
+              <span class="current-time">1hr</span>
+            </p>
+            <p class="previous">
+              Yesterday - <span class="previous-time">2hrs</span>
+            </p>
+          </div>
+          <div class="data weekly">
+            <p class="current">
+              <span class="current-time">10hrs</span>
+            </p>
+            <p class="previous">
+              Last Week - <span class="previous-time">8hrs</span>
+            </p>
+          </div>
+          <div class="data monthly">
+            <p class="current">
+              <span class="current-time">23hrs</span>
+            </p>
+            <p class="previous">
+              Last Month - <span class="previous-time">29hrs</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="study" timeframe="daily">
+        <div class="content">
+          <button type="button" class="ellipsis">
+            <img src="./images/icon-ellipsis.svg" alt="More">
+          </button>
+          <h2>
+            Study
+          </h2>
+          <div class="data daily">
+            <p class="current">
+              <span class="current-time">0hrs</span>
+            </p>
+            <p class="previous">
+              Yesterday - <span class="previous-time">1hr</span>
+            </p>
+          </div>
+          <div class="data weekly">
+            <p class="current">
+              <span class="current-time">4hrs</span>
+            </p>
+            <p class="previous">
+              Last Week - <span class="previous-time">7hrs</span>
+            </p>
+          </div>
+          <div class="data monthly">
+            <p class="current">
+              <span class="current-time">13hrs</span>
+            </p>
+            <p class="previous">
+              Last Month - <span class="previous-time">19hrs</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="exercise" timeframe="daily">
+        <div class="content">
+          <button type="button" class="ellipsis">
+            <img src="./images/icon-ellipsis.svg" alt="More">
+          </button>
+          <h2>
+            Exercise
+          </h2>
+          <div class="data daily">
+            <p class="current">
+              <span class="current-time">1hr</span>
+            </p>
+            <p class="previous">
+              Yesterday - <span class="previous-time">1hr</span>
+            </p>
+          </div>
+          <div class="data weekly">
+            <p class="current">
+              <span class="current-time">4hrs</span>
+            </p>
+            <p class="previous">
+              Last Week - <span class="previous-time">5hrs</span>
+            </p>
+          </div>
+          <div class="data monthly">
+            <p class="current">
+              <span class="current-time">11hrs</span>
+            </p>
+            <p class="previous">
+              Last Month - <span class="previous-time">18hrs</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="social" timeframe="daily">
+        <div class="content">
+          <button type="button" class="ellipsis">
+            <img src="./images/icon-ellipsis.svg" alt="More">
+          </button>
+          <h2>
+            Social
+          </h2>
+          <div class="data daily">
+            <p class="current">
+              <span class="current-time">1hr</span>
+            </p>
+            <p class="previous">
+              Yesterday - <span class="previous-time">3hrs</span>
+            </p>
+          </div>
+          <div class="data weekly">
+            <p class="current">
+              <span class="current-time">5hrs</span>
+            </p>
+            <p class="previous">
+              Last Week - <span class="previous-time">10hrs</span>
+            </p>
+          </div>
+          <div class="data monthly">
+            <p class="current">
+              <span class="current-time">21hrs</span>
+            </p>
+            <p class="previous">
+              Last Month - <span class="previous-time">23hrs</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="self-care" timeframe="daily">
+        <div class="content">
+          <button type="button" class="ellipsis">
+            <img src="./images/icon-ellipsis.svg" alt="More">
+          </button>
+          <h2>
+            Self Care
+          </h2>
+          <div class="data daily">
+            <p class="current">
+              <span class="current-time">0hrs</span>
+            </p>
+            <p class="previous">
+              Yesterday - <span class="previous-time">1hr</span>
+            </p>
+          </div>
+          <div class="data weekly">
+            <p class="current">
+              <span class="current-time">2hrs</span>
+            </p>
+            <p class="previous">
+              Last Week - <span class="previous-time">2hrs</span>
+            </p>
+          </div>
+          <div class="data monthly">
+            <p class="current">
+              <span class="current-time">7hrs</span>
+            </p>
+            <p class="previous">
+              Last Month - <span class="previous-time">11hrs</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
   
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    <br>
+    Coded by <a href="https://www.frontendmentor.io/profile/pangm1">Michael Pang</a>.
   </footer>
 </body>
 </html>
