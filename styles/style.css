@@ -67,3 +67,65 @@ body {
         text-align: center;
     }
 }
+
+.dashboard {
+    &[timeframe="daily"] {
+        .daily {
+            div& {
+                display: flex;
+            }
+
+            nav button& {
+                color: white;
+            }
+        }
+        .weekly, .monthly {
+            div& {
+                display: none;
+            }
+            nav button& {
+                color: var(--purple-500);
+            }
+        }
+    }
+
+    &[timeframe="weekly"] {
+        .weekly {
+            div& {
+                display: flex;
+            }
+
+            nav button& {
+                color: white;
+            }
+        }
+        .daily, .monthly {
+            div& {
+                display: none;
+            }
+            nav button& {
+                color: var(--purple-500);
+            }
+        }
+    }
+    
+    &[timeframe="monthly"] {
+        .monthly {
+            div& {
+                display: flex;
+            }
+
+            nav button& {
+                color: white;
+            }
+        }
+        .weekly, .daily {
+            div& {
+                display: none;
+            }
+            nav button& {
+                color: var(--purple-500);
+            }
+        }
+    }
+}
