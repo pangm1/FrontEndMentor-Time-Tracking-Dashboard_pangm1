@@ -65,10 +65,10 @@ body {
     }
 
     footer {
-        margin-top: 1rem;
-        padding: 1rem 0;
         flex: 0 1 0;
         width: 90%;
+        margin-top: 1rem;
+        padding: 1rem 0;
         border-top: 1px solid white;
         text-align: center;
     }
@@ -180,19 +180,18 @@ body {
 /*** Header ***/
 
 .dashboard header {
-    border-radius: 1rem;
-    background: var(--navy-900);
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
+    background: var(--navy-900);
 
     .top {
-        background: var(--purple-600);
-        border-radius: 1rem;
+        padding: var(--card-padding);
         display: flex;
         align-items: center;
-        /* justify-content: space-between; */
         gap: 1rem;
-        padding: var(--card-padding);
+        background: var(--purple-600);
+        border-radius: 1rem;
 
         h1 {
             font-weight: var(--rubik-thin);
@@ -217,13 +216,10 @@ body {
         font-size: 1.125rem;
 
         li {
-            /* all: unset; */
             list-style: none;
             text-align: center;
-            /* width: min-content; */
             button {
                 padding: var(--card-padding);
-                /* width: 100%; */
             }
         }
     }
@@ -286,9 +282,9 @@ body {
     }
 
     .data {
+        margin-top: 0.5rem;
         justify-content: space-between;
         align-items: center;
-        margin-top: 0.5rem;
 
         .current {
             font-size: 2rem;
@@ -323,8 +319,8 @@ body {
         grid-row: span 2;
 
         .top {
-            flex-direction: column;
             flex: auto;
+            flex-direction: column;
             img {
                 place-self: start;
             }
@@ -336,15 +332,15 @@ body {
     .dashboard header nav {
         flex: initial;
         ul {
+            padding: var(--card-padding);
             flex-direction: column;
             gap: 1.5rem;
-            padding: var(--card-padding);
 
             li {
                 text-align: start;
                 button {
-                    padding: 0;
                     height: min-content;
+                    padding: 0;
                 }
             }
         }
@@ -353,8 +349,8 @@ body {
     .dashboard .content {
         max-height: 100%;
         .data {
-            flex-direction: column;
             margin-top: 1.5rem;
+            flex-direction: column;
             justify-content: start;
             align-items: start;
 
