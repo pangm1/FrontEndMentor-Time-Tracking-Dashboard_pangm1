@@ -38,6 +38,12 @@
 
     button {
         all: unset;
+
+        &:focus-visible, &:hover {
+            transition: var(--transition-time);
+            outline: 2px solid white;
+            outline-offset: 5px;
+        }
     }
 
     img {
@@ -76,76 +82,25 @@ body {
 
 /*** conditional part ***/
 .dashboard {
-    &[timeframe="daily"] {
-        .daily {
-            div& {
-                display: flex;
-            }
-
-            nav button& {
-                color: white;
-            }
+    nav button {
+        color: var(--purple-500);
+        &:hover, &:focus {
+            color: white;
         }
-        .weekly, .monthly {
-            transition: var(--transition-time);
-            div& {
-                display: none;
-            }
-            nav button& {
-                color: var(--purple-500);
-                &:hover, &:focus {
-                    color: white;
-                }
-            }
+
+        &[aria-pressed="true"] {
+            color: white;
         }
     }
 
-    &[timeframe="weekly"] {
-        .weekly {
-            div& {
-                display: flex;
-            }
-
-            nav button& {
-                color: white;
-            }
-        }
-        .daily, .monthly {
-            transition: var(--transition-time);
-            div& {
-                display: none;
-            }
-            nav button& {
-                color: var(--purple-500);
-                &:hover, &:focus {
-                    color: white;
-                }
-            }
-        }
+    .data {
+        display: none;
     }
-    
-    &[timeframe="monthly"] {
-        .monthly {
-            div& {
-                display: flex;
-            }
 
-            nav button& {
-                color: white;
-            }
-        }
-        .weekly, .daily {
-            transition: var(--transition-time);
-            div& {
-                display: none;
-            }
-            nav button& {
-                color: var(--purple-500);
-                &:hover, &:focus {
-                    color: white;
-                }
-            }
-        }
+    &[data-timeframe="daily"] .data.daily,
+    &[data-timeframe="weekly"] .data.weekly,
+    &[data-timeframe="monthly"] .data.monthly {
+        display: flex;
     }
 }
 
@@ -229,7 +184,6 @@ body {
 .dashboard {
     margin: 6rem var(--card-padding);
     display: grid;
-    grid-template-rows: repeat(6, fit-content);
     gap: var(--card-padding);
 
     section, section .content {
@@ -305,7 +259,7 @@ body {
     }
     .dashboard {
         grid-template-columns: repeat(4, 15rem);
-        grid-template-rows: repeat(2, 25dvh);
+        grid-template-rows: repeat(2, auto);
 
         section, header {
             max-width: 25dvw;
@@ -346,20 +300,17 @@ body {
         }
         
     }
-    .dashboard .content {
-        max-height: 100%;
-        .data {
-            margin-top: 1.5rem;
-            flex-direction: column;
-            justify-content: start;
-            align-items: start;
+    .dashboard .content .data {
+        margin-top: 1.5rem;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
 
-            .current {
-                font-size: 3rem;
-            }
-            .previous {
-                margin-top: 1rem;
-            }
+        .current {
+            font-size: 3rem;
+        }
+        .previous {
+            margin-top: 1rem;
         }
     }
 }

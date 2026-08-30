@@ -12,16 +12,25 @@ const dataLocation = "./data.json";
 // console.log(dashboard.attributes.timeframe);
 // console.log(sections);
 
-dailyButton.addEventListener('click', () => changeDashboard("daily"));
-weeklyButton.addEventListener('click', () => changeDashboard("weekly"));
-monthlyButton.addEventListener('click', () => changeDashboard("monthly"));
+dailyButton.addEventListener('click', (e) => changeDashboard("daily", e.target));
+weeklyButton.addEventListener('click', (e) => changeDashboard("weekly", e.target));
+monthlyButton.addEventListener('click', (e) => changeDashboard("monthly", e.target));
 
-resetDashboard();
+// resetDashboard();
 populateDashboard();
 
-function changeDashboard(s) { 
+function changeDashboard(s, e) { 
     // console.log("Clicked " + s);
-    dashboard.setAttribute("timeframe", s);
+    console.log(e);
+    dashboard.setAttribute("data-timeframe", s);
+    resetButtons();
+    e.setAttribute("aria-pressed", "true");
+}
+
+function resetButtons() {
+    [dailyButton, weeklyButton, monthlyButton].forEach((b) => {
+        b.setAttribute("aria-pressed", "false");
+    });
 }
 
 async function getData() { 
